@@ -14,14 +14,14 @@ import java.util.List;
  */
 public class Exercicio_Model {
 
-    private String nome, series, repeticoes, carga, grupo;
+    private String nome, grupo;
+    private boolean maquina, multiarticular;
 
-    public Exercicio_Model(String nome, String series, String repeticoes, String carga, String grupo) {
+    public Exercicio_Model(String nome, String grupo, boolean maquina, boolean multiarticular) {
         this.nome = nome;
-        this.series = series;
-        this.repeticoes = repeticoes;
-        this.carga = carga;
         this.grupo = grupo;
+        this.maquina = maquina;
+        this.multiarticular = multiarticular;
     }
 
     public String getNome() {
@@ -32,30 +32,6 @@ public class Exercicio_Model {
         this.nome = nome;
     }
 
-    public String getSeries() {
-        return series;
-    }
-
-    public void setSeries(String series) {
-        this.series = series;
-    }
-
-    public String getRepeticoes() {
-        return repeticoes;
-    }
-
-    public void setRepeticoes(String repeticoes) {
-        this.repeticoes = repeticoes;
-    }
-
-    public String getCarga() {
-        return carga;
-    }
-
-    public void setCarga(String carga) {
-        this.carga = carga;
-    }
-
     public String getGrupo() {
         return grupo;
     }
@@ -64,11 +40,36 @@ public class Exercicio_Model {
         this.grupo = grupo;
     }
 
-    public static List<Exercicio_Model> listaExercicio_PorGrupo(String grupo) {
-        ArrayList<Exercicio_Model> lista = new ArrayList<>();
-        for(Exercicio_Model treino_Model:)
-
-        return lista;
+    public boolean isMaquina() {
+        return maquina;
     }
 
+    public void setMaquina(boolean maquina) {
+        this.maquina = maquina;
+    }
+
+    public boolean isMultiarticular() {
+        return multiarticular;
+    }
+
+    public void setMultiarticular(boolean multiarticular) {
+        this.multiarticular = multiarticular;
+    }
+    public static ArrayList<Exercicio_Model> retornaListaExercicios_PorGrupo(ArrayList<Exercicio_Model> lista_geral,String grupo){
+       ArrayList<Exercicio_Model> lista_grupo= new ArrayList<Exercicio_Model>();
+        System.out.println("retornaListaExercicios_PorGrupo"+grupo);
+        for(Exercicio_Model ex:lista_geral){
+            if (ex.grupo==grupo){
+                lista_grupo.add(ex);  
+                System.out.println(ex.getNome()+"adicionado");
+            }
+        }
+        return lista_grupo;
+        
+        
+    }
+    
+    public void AddLista(ArrayList<Exercicio_Model> lista_geral ){
+        lista_geral.add(this);
+    }
 }
