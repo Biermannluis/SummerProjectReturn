@@ -59,7 +59,7 @@ public class Exercicio_Model {
        ArrayList<Exercicio_Model> lista_grupo= new ArrayList<Exercicio_Model>();
         System.out.println("retornaListaExercicios_PorGrupo"+grupo);
         for(Exercicio_Model ex:lista_geral){
-            if (ex.grupo==grupo){
+            if (ex.grupo.equals(grupo)){
                 lista_grupo.add(ex);  
                 System.out.println(ex.getNome()+"adicionado");
             }
